@@ -12,6 +12,17 @@
           "buttonTitle": "Begin"
         }
       }
+    },
+    {
+      "identifier": "frontPlaqueBodyMap",
+      "type": "plaqueBodyMap",
+      "title": "Front of the body",
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Proceed to Backside"
+        }
+      }
     }
   ]
 }

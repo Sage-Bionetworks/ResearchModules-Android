@@ -30,23 +30,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.sagebionetworks.research.modules.psorcast.inject;
+package org.sagebionetworks.research.modules.psorcast.step.plaque_body_map
 
-import com.google.gson.TypeAdapterFactory;
+import android.arch.lifecycle.ViewModel;
 
-import org.sagebionetworks.research.modules.common.step.completion.CompletionStepModule;
-import org.sagebionetworks.research.modules.common.step.overview.OverviewStepModule;
-import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map.PlaqueBodyMapStepModule;
-
-import dagger.Module;
-import dagger.Provides;
-import dagger.multibindings.IntoSet;
-
-@Module(includes = {PlaqueBodyMapStepModule.class, OverviewStepModule.class, CompletionStepModule.class})
-public class PsorcastStepModule {
-    @Provides
-    @IntoSet
-    static TypeAdapterFactory provideMotorControlAutoValueTypeAdapterFactory() {
-        return PsorcastAutoValueTypeAdapterFactory.create();
-    }
+class ShowPlaqueBodyStepViewModel : ViewModel() {
+    // TODO: Implement the ViewModel
 }

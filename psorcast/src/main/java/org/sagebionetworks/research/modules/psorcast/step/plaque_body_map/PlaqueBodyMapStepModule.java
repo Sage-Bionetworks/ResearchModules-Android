@@ -30,23 +30,50 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.sagebionetworks.research.modules.psorcast.inject;
+package org.sagebionetworks.research.modules.psorcast.step.plaque_body_map;
 
-import com.google.gson.TypeAdapterFactory;
+import static org.sagebionetworks.research.domain.inject.GsonModule.createPassThroughDeserializer;
 
-import org.sagebionetworks.research.modules.common.step.completion.CompletionStepModule;
-import org.sagebionetworks.research.modules.common.step.overview.OverviewStepModule;
-import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map.PlaqueBodyMapStepModule;
+import com.google.gson.JsonDeserializer;
+
+import org.sagebionetworks.research.domain.inject.GsonModule.ClassKey;
+import org.sagebionetworks.research.domain.inject.StepModule.StepClassKey;
+import org.sagebionetworks.research.mobile_ui.inject.ShowStepModule.ShowStepFragmentFactory;
+import org.sagebionetworks.research.mobile_ui.inject.ShowStepModule.StepViewKey;
+import org.sagebionetworks.research.presentation.inject.StepViewModule.InternalStepViewFactory;
+import org.sagebionetworks.research.presentation.inject.StepViewModule.StepTypeKey;
 
 import dagger.Module;
 import dagger.Provides;
-import dagger.multibindings.IntoSet;
+import dagger.multibindings.IntoMap;
 
-@Module(includes = {PlaqueBodyMapStepModule.class, OverviewStepModule.class, CompletionStepModule.class})
-public class PsorcastStepModule {
+@Module
+public class PlaqueBodyMapStepModule {
     @Provides
-    @IntoSet
-    static TypeAdapterFactory provideMotorControlAutoValueTypeAdapterFactory() {
-        return PsorcastAutoValueTypeAdapterFactory.create();
+    @IntoMap
+    @StepClassKey(PlaqueBodyMapStep.class)
+    static String providePlaqueBodyMapStepTypeKey() {
+        return PlaqueBodyMapStep.TYPE;
+    }
+
+    @Provides
+    @IntoMap
+    @ClassKey(PlaqueBodyMapStep.class)
+    static JsonDeserializer<?> providePlaqueBodyMapStepDeserializer() {
+        return createPassThroughDeserializer(PlaqueBodyMapStep.class);
+    }
+
+    @Provides
+    @IntoMap
+    @StepTypeKey(PlaqueBodyMapStep.TYPE)
+    static InternalStepViewFactory providePlaqueBodyMapStepViewFactory() {
+        return PlaqueBodyMapStepView::fromPlaqueBodyMapStep;
+    }
+
+    @Provides
+    @IntoMap
+    @StepViewKey(PlaqueBodyMapStepView.TYPE)
+    static ShowStepFragmentFactory provideShowPlaqueBodyStepFragment() {
+        return ShowPlaqueBodyStepFragment::newInstance;
     }
 }

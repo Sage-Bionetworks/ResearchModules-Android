@@ -32,6 +32,8 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
@@ -85,6 +87,7 @@ dependencies {
 
     // Butterknife
     implementation "com.jakewharton:butterknife:$butterknife_version"
+    implementation 'com.android.support:support-v4:28.0.0'
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
 
     // Dagger
@@ -108,7 +111,8 @@ dependencies {
     annotationProcessor "com.google.auto.value:auto-value:$auto_value_version"
     annotationProcessor 'com.ryanharter.auto.value:auto-value-parcel:0.2.6'
     annotationProcessor "com.ryanharter.auto.value:auto-value-gson:$auto_value_gson_version"
-    annotationProcessor "com.google.auto.value:auto-value-annotations:$auto_value_version" // include again for auto-value-gson
+    annotationProcessor "com.google.auto.value:auto-value-annotations:$auto_value_version"
+    // include again for auto-value-gson
 
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation 'com.google.code.findbugs:jsr305:2.0.1'
@@ -125,4 +129,5 @@ dependencies {
     testAnnotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
     testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -30,23 +30,42 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.sagebionetworks.research.modules.psorcast.inject;
+package org.sagebionetworks.research.modules.psorcast.step.plaque_body_map
 
-import com.google.gson.TypeAdapterFactory;
+import android.arch.lifecycle.ViewModelProviders
+import android.os.Bundle
+import android.support.annotation.NonNull
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
-import org.sagebionetworks.research.modules.common.step.completion.CompletionStepModule;
-import org.sagebionetworks.research.modules.common.step.overview.OverviewStepModule;
-import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map.PlaqueBodyMapStepModule;
+import org.sagebionetworks.research.modules.psorcast.R
+import org.sagebionetworks.research.presentation.model.interfaces.StepView
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
-import dagger.Module;
-import dagger.Provides;
-import dagger.multibindings.IntoSet;
+class ShowPlaqueBodyStepFragment : Fragment() {
 
-@Module(includes = {PlaqueBodyMapStepModule.class, OverviewStepModule.class, CompletionStepModule.class})
-public class PsorcastStepModule {
-    @Provides
-    @IntoSet
-    static TypeAdapterFactory provideMotorControlAutoValueTypeAdapterFactory() {
-        return PsorcastAutoValueTypeAdapterFactory.create();
+    companion object {
+        @JvmStatic
+        fun newInstance(@NonNull stepView: StepView) = ShowPlaqueBodyStepFragment()
+    }
+
+    private var logger : Logger = LoggerFactory.getLogger(ShowPlaqueBodyStepFragment::class.java)
+
+    private lateinit var viewModel: ShowPlaqueBodyStepViewModel
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?): View? {
+        logger.debug("onCreateView called")
+
+        return inflater.inflate(R.layout.srpm_show_plaque_body_step_fragment, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(ShowPlaqueBodyStepViewModel::class.java)
+        // TODO: Use the ViewModel
     }
 }

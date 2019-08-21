@@ -44,7 +44,6 @@ public abstract class PsorcastAutoValueTypeAdapterFactory implements TypeAdapter
     //     Static factory method to access the package
     //     private generated implementation
     public static TypeAdapterFactory create() {
-        return null;
-//        return new AutoValueGson_PsorcastAutoValueTypeAdapterFactory();
+        return new AutoValueGson_PsorcastAutoValueTypeAdapterFactory();
     }
 }
