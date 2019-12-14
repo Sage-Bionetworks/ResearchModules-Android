@@ -1,0 +1,129 @@
+{
+  "identifier": "JointPhotographyHands",
+  "steps": [
+    {
+      "identifier": "introduction",
+      "type": "overview",
+      "title": "Fingers Photo",
+      "text": "In this activity you will photograph your fingers with your nails in focus in order to measure any swelling in your fingers or nail involvement",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_hand",
+        "placementType": "topBackground"
+      },
+      "icons": [
+        {
+          "icon": "srpm_flat_surface_icon",
+          "title": "A FLAT SURFACE"
+        }
+      ],
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Get started"
+        },
+        "skip": {
+          "type": "reminder",
+          "reminderIdentifier": "JointPhotographyHands"
+        }
+      }
+    },
+    {
+      "identifier": "flatSurface",
+      "type": "instruction",
+      "title": "Find a flat, solid surface",
+      "text": "Find a flat surface which you can place your hands on. Capture your image on a solid colored surface which is different from your skin color if possible.",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_left_hand1",
+        "placementType": "topMarginBackground"
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "I found a flat surface"
+        }
+      }
+    },
+    {
+      "identifier": "captureLeft",
+      "type": "instruction",
+      "title": "Capture from directly above",
+      "text": "Capture from directly above. Your fingernails should be in focus.",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_left_hand",
+        "placementType": "topMarginBackground"
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "Capture left hand"
+        }
+      }
+    },
+    {
+      "identifier": "left",
+      "type": "jointPhotography",
+      "title": "Left Hand"
+    },
+    {
+      "identifier": "leftVerify",
+      "type": "photoDisplay",
+      "title": "Are your nails in focus?",
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Yes"
+        },
+        "goBackward": {
+          "type": "base",
+          "buttonTitle": "Retake"
+        }
+      }
+    },
+    {
+      "identifier": "captureRight",
+      "type": "instruction",
+      "title": "Capture from directly above",
+      "text": "Capture from directly above. Your fingernails should be in focus.",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_right_hand",
+        "placementType": "topMarginBackground"
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "Capture right hand"
+        }
+      }
+    },
+    {
+      "identifier": "right",
+      "type": "jointPhotography",
+      "title": "Right Hand"
+    },
+    {
+      "identifier": "rightVerify",
+      "type": "photoDisplay",
+      "title": "Are your nails in focus?",
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Yes"
+        },
+        "goBackward": {
+          "type": "base",
+          "buttonTitle": "Retake"
+        }
+      }
+    },
+    {
+      "identifier": "completion",
+      "type": "photographyCompletion",
+      "title": "Finger Photos Complete",
+      "text": "You have completed the fingers photo activity. By imaging your fingers, we can notice any changes in swelling or nail involvement."
+    }
+  ]
+}

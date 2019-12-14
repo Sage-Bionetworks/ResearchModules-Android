@@ -37,15 +37,23 @@ import com.google.gson.TypeAdapterFactory;
 import org.sagebionetworks.research.modules.common.step.completion.CompletionStepModule;
 import org.sagebionetworks.research.modules.common.step.instruction.InstructionStepModule;
 import org.sagebionetworks.research.modules.common.step.overview.OverviewStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.bellwether.BellwetherStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.body_selection.BodySelectionStepModule;
 import org.sagebionetworks.research.modules.psorcast.step.joint_pain.JointPainStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.joint_pain_completion.JointPainCompletionStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.joint_photography.JointPhotographyStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.photo_display.PhotoDisplayStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.photography_completion.PhotographyCompletionStepModule;
 import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map.PlaqueBodyMapStepModule;
+import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map_completion.PlaqueBodyMapCompletionStepModule;
 
 import dagger.Module;
 import dagger.Provides;
 import dagger.multibindings.IntoSet;
 
-@Module(includes = {JointPainStepModule.class, PlaqueBodyMapStepModule.class, OverviewStepModule.class, CompletionStepModule.class,
-        InstructionStepModule.class})
+@Module(includes = {JointPainStepModule.class, PhotoDisplayStepModule.class, JointPhotographyStepModule.class, PlaqueBodyMapStepModule.class, OverviewStepModule.class, CompletionStepModule.class,
+        InstructionStepModule.class, BodySelectionStepModule.class, PhotographyCompletionStepModule.class, JointPainCompletionStepModule.class,
+        BellwetherStepModule.class, PlaqueBodyMapCompletionStepModule.class})
 public class PsorcastStepModule {
     @Provides
     @IntoSet

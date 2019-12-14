@@ -1,0 +1,162 @@
+{
+  "identifier": "JointPhotographyFeet",
+  "steps": [
+    {
+      "identifier": "introduction",
+      "type": "overview",
+      "title": "Toes Photo",
+      "text": "In this activity you will photograph your bare feet with your toes in focus in order to track any changes which may come about",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_foot",
+        "placementType": "topBackground"
+      },
+      "icons": [
+        {
+          "icon": "srpm_flat_floor_icon",
+          "title": "A FLAT FLOOR"
+        },
+        {
+          "icon": "srpm_bare_foot_icon",
+          "title": "BARE FEET"
+        }
+      ],
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Get started"
+        },
+        "skip": {
+          "type": "reminder",
+          "reminderIdentifier": "JointPhotographyFeet"
+        }
+      }
+    },
+    {
+      "identifier": "bareFeetInstructionsLeft",
+      "type": "instruction",
+      "title": "Bare feet",
+      "text": "Let's first begin by photographing the toes on a flat surface. You should not be wearing any socks, sandals or shoes for this activity.",
+      "image": {
+        "type": "animated",
+        "imageNames": ["srpm_left_foot1", "srpm_left_foot2", "srpm_left_foot3"],
+        "placementType": "topBackground",
+        "animationDuration": 1.5
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "I'm not wearing shoes"
+        }
+      }
+    },
+    {
+      "identifier": "captureToesInstructionsLeft",
+      "type": "instruction",
+      "title": "Capture your toes",
+      "text": "Splay out your toes and capture them as closely as you can from directly above. Your toenails should be in focus.",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_left_foot",
+        "placementType": "topMarginBackground"
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "Capture left toes"
+        }
+      }
+    },
+    {
+      "identifier": "left",
+      "type": "jointPhotography",
+      "title": "Left Toes",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_left_foot_outline",
+        "placementType": "topMarginBackground"
+      }
+    },
+    {
+      "identifier": "leftVerify",
+      "type": "photoDisplay",
+      "title": "Are your nails in focus?",
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Yes"
+        },
+        "goBackward": {
+          "type": "base",
+          "buttonTitle": "Retake"
+        }
+      }
+    },
+    {
+      "identifier": "bareFeetInstructionsRight",
+      "type": "instruction",
+      "title": "Bare feet",
+      "text": "Let's first begin by photographing the toes on a flat surface. You should not be wearing any socks, sandals or shoes for this activity.",
+      "image": {
+        "type": "animated",
+        "imageNames": ["srpm_right_foot1", "srpm_right_foot2", "srpm_right_foot3"],
+        "placementType": "topBackground",
+        "animationDuration": 1.5
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "I'm not wearing shoes"
+        }
+      }
+    },
+    {
+      "identifier": "captureToesInstructionsRight",
+      "type": "instruction",
+      "title": "Capture your toes",
+      "text": "Splay out your toes and capture them as closely as you can from directly above. Your toenails should be in focus.",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_photograph_right_foot",
+        "placementType": "topMarginBackground"
+      },
+      "actions": {
+        "goForward": {
+          "type": "default",
+          "buttonTitle": "Capture right toes"
+        }
+      }
+    },
+    {
+      "identifier": "right",
+      "type": "jointPhotography",
+      "title": "Right Toes",
+      "image": {
+        "type": "fetchable",
+        "imageName": "srpm_right_foot_outline",
+        "placementType": "topMarginBackground"
+      }
+    },
+    {
+      "identifier": "rightVerify",
+      "type": "photoDisplay",
+      "title": "Are your nails in focus?",
+      "actions": {
+        "goForward": {
+          "type": "base",
+          "buttonTitle": "Yes"
+        },
+        "goBackward": {
+          "type": "base",
+          "buttonTitle": "Retake"
+        }
+      }
+    },
+    {
+      "identifier": "completion",
+      "type": "photographyCompletion",
+      "title": "Activity Complete",
+      "text": "You have completed the foot imaging activity. By tracking your feet you can notice any changes as they come about."
+    }
+  ]
+}

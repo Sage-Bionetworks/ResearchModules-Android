@@ -36,8 +36,15 @@ import org.sagebionetworks.research.mobile_ui.inject.ShowStepFragmentScope;
 import org.sagebionetworks.research.modules.common.step.completion.ShowCompletionStepFragment;
 import org.sagebionetworks.research.modules.common.step.instruction.ShowInstructionStepFragment;
 import org.sagebionetworks.research.modules.common.step.overview.ShowOverviewStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.bellwether.ShowBellwetherStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.body_selection.ShowBodySelectionStepFragment;
 import org.sagebionetworks.research.modules.psorcast.step.joint_pain.ShowJointPainStepFragment;
+import org.sagebionetworks.research.modules.psorcast.org.sagebionetworks.research.modules.psorcast.step.photo_display.ShowPhotoDisplayStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.joint_pain_completion.ShowJointPainCompletionStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.joint_photography.ShowJointPhotographyStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.photography_completion.ShowPhotographyCompletionStepFragment;
 import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map.ShowPlaqueBodyMapStepFragment;
+import org.sagebionetworks.research.modules.psorcast.step.plaque_body_map_completion.ShowPlaqueBodyMapCompletionStepFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -64,4 +71,32 @@ public abstract class PsorcastShowStepFragmentsModule {
     @ContributesAndroidInjector
     @ShowStepFragmentScope
     abstract ShowInstructionStepFragment contributeShowInstructionStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowJointPhotographyStepFragment contributeShowJointPhotographyStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowPhotoDisplayStepFragment contributeShowPhotoDisplayStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowBodySelectionStepFragment contributeShowBodySelectionStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowPhotographyCompletionStepFragment contributeShowPhotographyCompletionStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowJointPainCompletionStepFragment contributeShowJointPainCompletionStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowBellwetherStepFragment contributeShowBellwetherStepFragmentInjector();
+
+    @ContributesAndroidInjector
+    @ShowStepFragmentScope
+    abstract ShowPlaqueBodyMapCompletionStepFragment contributeShowPlaqueBodyMapCompletionStepFragmentInjector();
 }
